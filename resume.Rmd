@@ -1,30 +1,44 @@
 ---
-title: "resume"
-author: "Yifei Yu"
-date: "2024-10-28"
-output: html_document
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# My academic and professional experience
 
-## R Markdown
+### Academic background
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+##### Undergraduate degree: University of Minnesota Morris
+BA in Economics, BA in Business and Management (Global Business), Minor in Statistics
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+##### Master's degree: Columbia University 
+Biostatistics, Public Health Data Science Track
 
-```{r cars}
-summary(cars)
-```
+### Professional experience
 
-## Including Plots
+##### Student Researcher in Truckers and Turnover Project
+This decades-long project initiated by UMM faculties aimed to explore the relationship between medical conditions and safety performance in commercial vehicle drivers, with an emphasis on obstructive sleep apnea (OSA).
 
-You can also embed plots, for example:
+Collected data from medical exam records during 2018-2020, which contains about 62,000 observations. Imported the data into Stata, cleaned the data and eliminated outliers, built regression models, depicted charts and tables, and provided professors with preliminary data analysis results.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+##### Teaching Assistant at University of Minnesota Morris
+Corrected students’ assignments and quiz answer sheets and gave detailed feedback to students in Principles of Macroeconomics and Macroeconomic Theory class.
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+##### Student Researcher in The Effect of Corruption and Ease of Doing Business on FDI Inflows Project
+As earlier studies argued that corruption may grease the wheel and increase FDI inflows, this project, belonging to the Undergraduate Research Opportunities Program, aimed to be the first one to empirically establish if this is the case.
+
+Conducted literature review. Downloaded data from the World Development Indicators, Doing Business database, and World Governance Indicators of the World Bank and developed a panel (repeated cross-section) data set for the developing countries for 2000-2020. Cleaned data with Stata.
+
+##### Business Analytics Intern at Byte Dance
+Dealt with customer data, regarding customer behaviors, preferences, and transactions; built models based on behavior data, assisted in making a targeted marketing plan.
+
+Depicted user paths, analyzed the competitors of TikTok, and compared the pros and cons from the perspectives of functions, entered brands, product diversity, user groups, and user feedback.
+
+##### Strategic Consulting Intern at Boston Consulting Group
+Assisted in the Daimler-Benz E-commerce Business Development Phase I project. Conducted the automotive industry analysis: depicted the whole industry chain composition map, collected related policies in the past 3 years, did Five Porter competitor analysis, calculated market scale, drew the industry growth curve, and analyzed industry value chain.
+
+##### Management Consulting Intern at IQVIA
+Assisted in the Retrospect and Prospect of the Global Oncology Field project. Collected data during the year 2011-2021 from IQVIA Institute, Citeline Trialtrove, etc. Cleaned data, analyzed 16 factors related to clinical trials, the impact of COVID-19, expenditure, etc., and visualized the findings. 
