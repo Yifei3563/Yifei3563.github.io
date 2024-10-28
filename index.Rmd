@@ -10,3 +10,6 @@ output:
 # This is Yifei Yu's website
 
 ![](picture/hello.png)
+My name is Yifei Yu. I come from Shanghai, China. 
+
+If you would like to know about my academic and professional experience, please visit [this page](resume).
