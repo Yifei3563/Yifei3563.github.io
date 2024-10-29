@@ -16,10 +16,6 @@ library(dplyr)
 
 ```{r}
 data("instacart")
-
-instacart = instacart |> 
-  select(order_id, days_since_prior_order, user_id, order_number) |> 
-  filter(order_id %in% 100:10000)
 ```
 
 
@@ -30,12 +26,9 @@ Column {data-width=650}
 
 ```{r}
 instacart |> 
-  mutate(
-    text_label = str_c("User id: ", user_id, 
-                       "\nOrder Number: ", order_number,
-                       "\nDays since prior order: ", days_since_prior_order)) |> 
+  filter(department == "dairy eggs") |> 
   plot_ly(
-    x = ~order_number, y = ~days_since_prior_order, color = ~as.factor(user_id), text = ~text_label,
+    x = ~ order_hour_of_day, y = ~ order_dow,
     type = "scatter", mode = "markers", alpha = 0.5
   )
 ```
@@ -46,12 +39,22 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-
+instacart |> 
+  group_by(department) |> 
+  summarize(orders = n_distinct(order_id)) |> 
+  plot_ly(
+    x = ~orders, y = ~ fct_reorder(department, orders),
+    type = "bar"
+  )
 ```
 
 ### Chart C
 
 ```{r}
-
+instacart |> 
+  mutate(
+    department = fct_reorder(department, days_since_prior_order)) |> 
+  plot_ly(x = ~ department, y = ~ days_since_prior_order, color = ~ department,
+          type = "box")
 ```
 
