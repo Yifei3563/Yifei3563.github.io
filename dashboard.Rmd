@@ -1,0 +1,57 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(dplyr)
+```
+
+```{r}
+data("instacart")
+
+instacart = instacart |> 
+  select(order_id, days_since_prior_order, user_id, order_number) |> 
+  filter(order_id %in% 100:10000)
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+instacart |> 
+  mutate(
+    text_label = str_c("User id: ", user_id, 
+                       "\nOrder Number: ", order_number,
+                       "\nDays since prior order: ", days_since_prior_order)) |> 
+  plot_ly(
+    x = ~order_number, y = ~days_since_prior_order, color = ~as.factor(user_id), text = ~text_label,
+    type = "scatter", mode = "markers", alpha = 0.5
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
