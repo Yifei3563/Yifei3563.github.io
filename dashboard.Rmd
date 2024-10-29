@@ -26,11 +26,10 @@ Column {data-width=650}
 
 ```{r}
 instacart |> 
-  filter(department == "dairy eggs") |> 
-  plot_ly(
-    x = ~ order_hour_of_day, y = ~ order_dow,
-    type = "scatter", mode = "markers", alpha = 0.5
-  )
+  mutate(
+    department = fct_reorder(department, days_since_prior_order)) |> 
+  plot_ly(x = ~ department, y = ~ days_since_prior_order, color = ~ department,
+          type = "box")
 ```
 
 Column {data-width=350}
@@ -52,9 +51,10 @@ instacart |>
 
 ```{r}
 instacart |> 
-  mutate(
-    department = fct_reorder(department, days_since_prior_order)) |> 
-  plot_ly(x = ~ department, y = ~ days_since_prior_order, color = ~ department,
-          type = "box")
+  filter(department == "dairy eggs") |> 
+  plot_ly(
+    x = ~ order_hour_of_day, y = ~ order_dow,
+    type = "scatter", mode = "markers", alpha = 0.5
+  )
 ```
 

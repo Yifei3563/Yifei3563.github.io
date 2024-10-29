@@ -13,3 +13,5 @@ output:
 My name is Yifei Yu. I come from Shanghai, China. 
 
 If you would like to know about my academic and professional experience, please visit [this page](resume.html).
+
+For homework problem 2, please visit [this page](dashboard.html).
