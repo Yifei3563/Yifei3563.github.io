@@ -51,10 +51,9 @@ instacart |>
 
 ```{r}
 instacart |> 
-  filter(department == "dairy eggs") |> 
-  plot_ly(
-    x = ~ order_hour_of_day, y = ~ order_dow,
-    type = "scatter", mode = "markers", alpha = 0.5
-  )
+  group_by(order_hour_of_day) |> 
+  summarize(n = n_distinct(order_id)) |> 
+  plot_ly(x = ~ order_hour_of_day, y = ~ n, type = "scatter", 
+          mode = "markers", alpha = 0.5)
 ```
 
